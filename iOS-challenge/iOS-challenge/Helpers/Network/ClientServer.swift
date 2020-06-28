@@ -9,13 +9,13 @@
 import Foundation
 
 protocol ClientServer {
-    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void)
+    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void)
 }
 
 struct AppClientServer: ClientServer {
-    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void) {
-        let parameters = ["language": "swift", "sort": "stars"]
-        Network.shared.request(.getRepositories, parameters: parameters, model: [Repository].self, completion: { result in
+    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void) {
+        let parameters = ["q": "language:swift", "sort": "stars"]
+        Network.shared.request(.getRepositories, parameters: parameters, model: Repositories.self, completion: { result in
             switch result {
             case .failure(let errorMessage):
                 completion(.failure(error: errorMessage))
@@ -26,9 +26,9 @@ struct AppClientServer: ClientServer {
     }
 }
 
-struct MockClientServer: ClientServer {
-    
-    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void) {
-        completion(.success(Repository.getMockedData()))
-    }
-}
+//struct MockClientServer: ClientServer {
+//
+//    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void) {
+//        completion(.success(Repository.getMockedData()))
+//    }
+//}

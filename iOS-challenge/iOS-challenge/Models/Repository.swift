@@ -8,6 +8,10 @@
 
 import Foundation
 
+class Repositories: Decodable {
+    let items: [Repository]
+}
+
 struct Repository: Decodable {
     let id: Int
     let name: String
@@ -16,13 +20,24 @@ struct Repository: Decodable {
     let starsCount: Int
     let language: String
     
+//    required init(from decoder: Decoder) throws {
+//        let items = try decoder.container(keyedBy: CodingKeys.self)
+//        //        author = try items.decode(Author.self, forKey: .author)
+//        id = try items.decode(Int.self, forKey: .id)
+//        //        name = try items.decode(String.self, forKey: .name)
+//        //        isPrivate = try items.decode(Bool.self, forKey: .isPrivate)
+//        //        starsCount = try items.decode(Int.self, forKey: .starsCount)
+//        //        language = try items.decode(String.self, forKey: .language)
+//    }
+    
     enum CodingKeys: String, CodingKey {
-        case author = "author"
+        case author = "owner"
         case starsCount = "stargazers_count"
         case isPrivate = "private"
         case id
         case name
         case language
+//        case items = "items"
     }
     
     static func getMockedData() -> [Repository] {
