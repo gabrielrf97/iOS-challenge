@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+protocol ClientServer {
+    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void)
+}
+
+struct AppClientServer: ClientServer {
+    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void) {
+        let parameters = ["language": "swift", "sort": "stars"]
+        Network.shared.request(.getRepositories, parameters: parameters, model: [Repository].self, completion: { result in
+            switch result {
+            case .failure(let errorMessage):
+                completion(.failure(error: errorMessage))
+            case .success(let repositories):
+                completion(.success(repositories))
+            }
+        })
+    }
+}
+
+struct MockClientServer: ClientServer {
+    
+    func requestSwiftRepositories(completion: @escaping (NetworkLayer<[Repository]>) -> Void) {
+        completion(.success(Repository.getMockedData()))
+    }
+}
