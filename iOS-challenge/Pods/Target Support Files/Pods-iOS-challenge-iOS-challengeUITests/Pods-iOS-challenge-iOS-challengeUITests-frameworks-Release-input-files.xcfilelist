@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-iOS-challenge-iOS-challengeUITests/Pods-iOS-challenge-iOS-challengeUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework

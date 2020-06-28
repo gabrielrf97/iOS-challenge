@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.1.0)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
+  - SteviaLayout (4.7.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - SDWebImage
+  - SteviaLayout
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SDWebImage
+    - SteviaLayout
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+
+PODFILE CHECKSUM: 50108534330bd2102b64034541aa9f045325149f
+
+COCOAPODS: 1.9.1
