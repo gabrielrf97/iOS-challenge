@@ -9,12 +9,12 @@
 import Foundation
 
 protocol ClientServer {
-    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void)
+    func requestSwiftRepositories(in page: Int, completion: @escaping (NetworkLayer<Repositories>) -> Void)
 }
 
 struct AppClientServer: ClientServer {
-    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void) {
-        let parameters = ["q": "language:swift", "sort": "stars"]
+    func requestSwiftRepositories(in page: Int, completion: @escaping (NetworkLayer<Repositories>) -> Void) {
+        let parameters : Parameters = ["q": "language:swift", "sort": "stars", "page": page]
         Network.shared.request(.getRepositories, parameters: parameters, model: Repositories.self, completion: { result in
             switch result {
             case .failure(let errorMessage):

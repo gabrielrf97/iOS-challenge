@@ -17,15 +17,17 @@ class RepoListViewModel {
     
     weak var viewDelegate: RepoListViewDelegate?
     var server: ClientServer?
+    var lastFetchedPage = 1
     
     init(network: ClientServer = AppClientServer()) {
         self.server = network
     }
     
     func fecthData() {
-        server?.requestSwiftRepositories(completion: { [unowned self] response in
+        server?.requestSwiftRepositories(in: lastFetchedPage, completion: { [unowned self] response in
             switch response {
             case .success(let repositories):
+                self.lastFetchedPage += 1
                 self.viewDelegate?.show(repositories: repositories)
             case .failure(let errorMessage):
                 self.viewDelegate?.show(errorMessage: errorMessage)

@@ -9,7 +9,7 @@
 import Foundation
 
 class Repositories: Decodable {
-    let items: [Repository]
+    var items: [Repository]
 }
 
 struct Repository: Decodable {
