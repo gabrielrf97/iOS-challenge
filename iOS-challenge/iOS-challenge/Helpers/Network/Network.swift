@@ -56,11 +56,11 @@ class Network {
                     }
                 }
                 
-                completion(.failure(error: "Sorry, something went wrong"))
-                
             } catch {
                 completion(.failure(error: "Sorry, something went wrong"))
             }
         }
+        
     }
+    
 }

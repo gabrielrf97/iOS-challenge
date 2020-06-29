@@ -10,7 +10,6 @@
 		0EE26725944B64BD8D8CBA1A /* Pods_iOS_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DA632C0679F008ACD5F67C /* Pods_iOS_challenge.framework */; };
 		7D2C468124A8132100EA197A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C468024A8132100EA197A /* AppDelegate.swift */; };
 		7D2C468324A8132100EA197A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C468224A8132100EA197A /* SceneDelegate.swift */; };
-		7D2C468824A8132100EA197A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C468624A8132100EA197A /* Main.storyboard */; };
 		7D2C468A24A8132200EA197A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C468924A8132200EA197A /* Assets.xcassets */; };
 		7D2C468D24A8132200EA197A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C468B24A8132200EA197A /* LaunchScreen.storyboard */; };
 		7D2C469824A8132200EA197A /* iOS_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C469724A8132200EA197A /* iOS_challengeTests.swift */; };
@@ -23,6 +22,7 @@
 		7D2C46C524A817AD00EA197A /* ClientServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46C424A817AD00EA197A /* ClientServer.swift */; };
 		7D2C46C924A82F3600EA197A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46C824A82F3600EA197A /* UIViewControllerExt.swift */; };
 		7D2C46CE24A85BA300EA197A /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46CD24A85BA300EA197A /* RepositoryCell.swift */; };
+		7D2C46D024AA5ED100EA197A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C46CF24AA5ED100EA197A /* Main.storyboard */; };
 		A2208562846EA98212221D43 /* Pods_iOS_challenge_iOS_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5976E3F19BBC8E96BC24C800 /* Pods_iOS_challenge_iOS_challengeUITests.framework */; };
 		D958F81AA68B6BF5EB1F49FD /* Pods_iOS_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1AB338BAB86E6ED0C6382 /* Pods_iOS_challengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,6 @@
 		7D2C467D24A8132100EA197A /* iOS-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2C468024A8132100EA197A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D2C468224A8132100EA197A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D2C468724A8132100EA197A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D2C468924A8132200EA197A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D2C468C24A8132200EA197A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2C468E24A8132200EA197A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		7D2C46C424A817AD00EA197A /* ClientServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServer.swift; sourceTree = "<group>"; };
 		7D2C46C824A82F3600EA197A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		7D2C46CD24A85BA300EA197A /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		7D2C46CF24AA5ED100EA197A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8340A253DED85D42FE0DD89A /* Pods-iOS-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-challengeTests/Pods-iOS-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D897B6CCB5241DDF4325111 /* Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-challenge-iOS-challengeUITests/Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9FD7D286E73F7043AD70242 /* Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-challenge-iOS-challengeUITests/Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 				7D2C46B024A8137100EA197A /* Models */,
 				7D2C46B624A813C200EA197A /* Components */,
 				7D2C468224A8132100EA197A /* SceneDelegate.swift */,
-				7D2C468624A8132100EA197A /* Main.storyboard */,
 				7D2C468B24A8132200EA197A /* LaunchScreen.storyboard */,
 				7D2C468E24A8132200EA197A /* Info.plist */,
 			);
@@ -191,6 +190,7 @@
 			children = (
 				7D2C46B424A813BC00EA197A /* RepoListViewController.swift */,
 				7D2C46BA24A8143B00EA197A /* RepoListViewModel.swift */,
+				7D2C46CF24AA5ED100EA197A /* Main.storyboard */,
 			);
 			path = RepoList;
 			sourceTree = "<group>";
@@ -394,9 +394,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2C46D024AA5ED100EA197A /* Main.storyboard in Resources */,
 				7D2C468D24A8132200EA197A /* LaunchScreen.storyboard in Resources */,
 				7D2C468A24A8132200EA197A /* Assets.xcassets in Resources */,
-				7D2C468824A8132100EA197A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,14 +569,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7D2C468624A8132100EA197A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D2C468724A8132100EA197A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7D2C468B24A8132200EA197A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

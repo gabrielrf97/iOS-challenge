@@ -39,28 +39,28 @@ class RepoListViewController: UIViewController, ViewCode {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDelegate = self
         setupViewComponents()
         fetchInfo()
     }
     
     func createComponents() {
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: cellIdentifier)
 //        tableView = UITableView()
+//        view.addSubview(tableView)
 //        tableView.delegate = self
 //        tableView.dataSource = self
-//        view.addSubview(tableView)
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: cellIdentifier)
         
 //        viewLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
 //        view.addSubview(viewLabel)
     }
     
     func setupConstraints() {
-//        tableView.left(0).top(0).right(0).bottom(0)
-//        viewLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        viewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        viewLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//        viewLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        viewLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 //        viewLabel.backgroundColor = .red
     }
     
@@ -79,8 +79,17 @@ extension RepoListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RepositoryCell
-        cell.nameLabel.text = repositories?.items[indexPath.row].name
+        guard let name = repositories?.items[indexPath.row].name,
+            let author = repositories?.items[indexPath.row].author.name,
+            let stars = repositories?.items[indexPath.row].starsCount,
+            let pictureUrl = repositories?.items[indexPath.row].author.pictureUrl
+            else { return cell}
+        cell.configure(repo: name, author: author, stars: stars, pictureUrl: pictureUrl)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
