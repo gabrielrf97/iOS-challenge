@@ -22,8 +22,11 @@
 		7D2C46C524A817AD00EA197A /* ClientServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46C424A817AD00EA197A /* ClientServer.swift */; };
 		7D2C46C924A82F3600EA197A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46C824A82F3600EA197A /* UIViewControllerExt.swift */; };
 		7D2C46CE24A85BA300EA197A /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46CD24A85BA300EA197A /* RepositoryCell.swift */; };
-		7D2C46D024AA5ED100EA197A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C46CF24AA5ED100EA197A /* Main.storyboard */; };
 		7D2C46D224AA9AE800EA197A /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46D124AA9AE800EA197A /* LoadingCell.swift */; };
+		7D2C46D424AB8EF500EA197A /* RepoListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46D324AB8EF500EA197A /* RepoListViewModelTest.swift */; };
+		7D2C46DB24AB92F300EA197A /* ClientServerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46DA24AB92F300EA197A /* ClientServerTest.swift */; };
+		7D2C46E024AB969F00EA197A /* RepoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2C46DF24AB969F00EA197A /* RepoList.storyboard */; };
+		7D2C46E424ABC3DB00EA197A /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C46E324ABC3DB00EA197A /* RepositoryCell.swift */; };
 		A2208562846EA98212221D43 /* Pods_iOS_challenge_iOS_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5976E3F19BBC8E96BC24C800 /* Pods_iOS_challenge_iOS_challengeUITests.framework */; };
 		D958F81AA68B6BF5EB1F49FD /* Pods_iOS_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B1AB338BAB86E6ED0C6382 /* Pods_iOS_challengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,8 +75,11 @@
 		7D2C46C424A817AD00EA197A /* ClientServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServer.swift; sourceTree = "<group>"; };
 		7D2C46C824A82F3600EA197A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		7D2C46CD24A85BA300EA197A /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
-		7D2C46CF24AA5ED100EA197A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7D2C46D124AA9AE800EA197A /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		7D2C46D324AB8EF500EA197A /* RepoListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModelTest.swift; sourceTree = "<group>"; };
+		7D2C46DA24AB92F300EA197A /* ClientServerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServerTest.swift; sourceTree = "<group>"; };
+		7D2C46DF24AB969F00EA197A /* RepoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepoList.storyboard; sourceTree = "<group>"; };
+		7D2C46E324ABC3DB00EA197A /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		8340A253DED85D42FE0DD89A /* Pods-iOS-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-challengeTests/Pods-iOS-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D897B6CCB5241DDF4325111 /* Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-challenge-iOS-challengeUITests/Pods-iOS-challenge-iOS-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9FD7D286E73F7043AD70242 /* Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-challenge-iOS-challengeUITests/Pods-iOS-challenge-iOS-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +144,6 @@
 				7D2C46B124A8137C00EA197A /* Modules */,
 				7D2C46B024A8137100EA197A /* Models */,
 				7D2C46B624A813C200EA197A /* Components */,
-				7D2C468224A8132100EA197A /* SceneDelegate.swift */,
 				7D2C468B24A8132200EA197A /* LaunchScreen.storyboard */,
 				7D2C468E24A8132200EA197A /* Info.plist */,
 			);
@@ -148,6 +153,8 @@
 		7D2C469624A8132200EA197A /* iOS-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C46D724AB924600EA197A /* Helpers */,
+				7D2C46D524AB8F0100EA197A /* Modules */,
 				7D2C469724A8132200EA197A /* iOS_challengeTests.swift */,
 				7D2C469924A8132200EA197A /* Info.plist */,
 			);
@@ -157,6 +164,7 @@
 		7D2C46A124A8132200EA197A /* iOS-challengeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C46E124ABC3AB00EA197A /* Components */,
 				7D2C46A224A8132200EA197A /* iOS_challengeUITests.swift */,
 				7D2C46A424A8132200EA197A /* Info.plist */,
 			);
@@ -182,6 +190,7 @@
 		7D2C46B224A8138500EA197A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C468224A8132100EA197A /* SceneDelegate.swift */,
 				7D2C468024A8132100EA197A /* AppDelegate.swift */,
 			);
 			path = App;
@@ -192,7 +201,7 @@
 			children = (
 				7D2C46B424A813BC00EA197A /* RepoListViewController.swift */,
 				7D2C46BA24A8143B00EA197A /* RepoListViewModel.swift */,
-				7D2C46CF24AA5ED100EA197A /* Main.storyboard */,
+				7D2C46DF24AB969F00EA197A /* RepoList.storyboard */,
 			);
 			path = RepoList;
 			sourceTree = "<group>";
@@ -261,6 +270,54 @@
 			children = (
 				7D2C46CD24A85BA300EA197A /* RepositoryCell.swift */,
 				7D2C46D124AA9AE800EA197A /* LoadingCell.swift */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		7D2C46D524AB8F0100EA197A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46D624AB8F0500EA197A /* RepoList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7D2C46D624AB8F0500EA197A /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46D324AB8EF500EA197A /* RepoListViewModelTest.swift */,
+			);
+			path = RepoList;
+			sourceTree = "<group>";
+		};
+		7D2C46D724AB924600EA197A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46D824AB92D600EA197A /* Network */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D2C46D824AB92D600EA197A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46DA24AB92F300EA197A /* ClientServerTest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7D2C46E124ABC3AB00EA197A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46E224ABC3B000EA197A /* Molecules */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7D2C46E224ABC3B000EA197A /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C46E324ABC3DB00EA197A /* RepositoryCell.swift */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -397,8 +454,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2C46D024AA5ED100EA197A /* Main.storyboard in Resources */,
 				7D2C468D24A8132200EA197A /* LaunchScreen.storyboard in Resources */,
+				7D2C46E024AB969F00EA197A /* RepoList.storyboard in Resources */,
 				7D2C468A24A8132200EA197A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +602,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2C46DB24AB92F300EA197A /* ClientServerTest.swift in Sources */,
+				7D2C46D424AB8EF500EA197A /* RepoListViewModelTest.swift in Sources */,
 				7D2C469824A8132200EA197A /* iOS_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2C46A324A8132200EA197A /* iOS_challengeUITests.swift in Sources */,
+				7D2C46E424ABC3DB00EA197A /* RepositoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

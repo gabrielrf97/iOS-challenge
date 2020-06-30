@@ -7,12 +7,15 @@ target 'iOS-challenge' do
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'SteviaLayout'
+  pod 'NVActivityIndicatorView'
+
 
   # Pods for iOS-challenge
 
   target 'iOS-challengeTests' do
     inherit! :search_paths
     # Pods for testing
+  
   end
 
   target 'iOS-challengeUITests' do

@@ -29,18 +29,19 @@ extension ViewCode {
 
 class RepoListViewController: UIViewController, ViewCode {
     
-//    var tableView: UITableView!
+    var tableView: UITableView!
     var refreshControl = UIRefreshControl()
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "repositoryCell"
     let loadingCellIndentifier = "loadingCell"
     var viewLabel: UILabel!
     var isLoading = false
-    let viewModel = RepoListViewModel()
+    var viewModel = RepoListViewModel()
     var repositories: Repositories?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.viewDelegate = self
         setupViewComponents()
         fetchInfo()
@@ -53,10 +54,10 @@ class RepoListViewController: UIViewController, ViewCode {
     }
     
     func createComponents() {
-//        tableView = UITableView()
-//        view.addSubview(tableView)
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView = UITableView()
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.register(LoadingCell.self, forCellReuseIdentifier: loadingCellIndentifier)
@@ -66,16 +67,16 @@ class RepoListViewController: UIViewController, ViewCode {
     }
     
     func setupConstraints() {
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 //        viewLabel.backgroundColor = .red
     }
     
     func fetchInfo() {
-        UIViewController.activityIndicator.startAnimating()
+//        UIViewController.activityIndicator.startAnimating()
         viewModel.fecthData()
     }
     
@@ -109,7 +110,6 @@ extension RepoListViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: loadingCellIndentifier, for: indexPath) as! LoadingCell
-            cell.activityIndicator.startAnimating()
             return cell
         }
     }
@@ -128,19 +128,17 @@ extension RepoListViewController: UITableViewDataSource, UITableViewDelegate {
         let contentHeight = scrollView.contentSize.height
 
         if (offsetY > contentHeight - scrollView.frame.height * 1.5) && !isLoading {
-//            isLoading = true
-//            fetchInfo()
+            isLoading = true
+            fetchInfo()
         }
     }
 }
 
 extension RepoListViewController: RepoListViewDelegate {
     func show(repositories: Repositories) {
-//        UIViewController.activityIndicator.stopAnimating()
-//        self.repositories.removeAll()
         isLoading = false
         self.refreshControl.endRefreshing()
-        if let items = self.repositories?.items {
+        if self.repositories != nil {
             self.repositories?.items.append(contentsOf: repositories.items)
         } else {
             self.repositories = repositories
@@ -149,7 +147,6 @@ extension RepoListViewController: RepoListViewDelegate {
     }
     
     func show(errorMessage: String) {
-//        UIViewController.activityIndicator.stopAnimating()
         isLoading = false
         self.refreshControl.endRefreshing()
         self.present(message: "Something went wrong", withTitle: "Ops" , option: "Try again!")

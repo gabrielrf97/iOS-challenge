@@ -8,26 +8,29 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 class LoadingCell: UITableViewCell, ViewCode {
     
-    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: NVActivityIndicatorView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        setupViewComponents()
     }
     
     required init?(coder: NSCoder) {
         fatalError("There's no XIB available for component.")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupViewComponents()
+    }
+    
     func createComponents() {
-        activityIndicator = UIActivityIndicatorView(frame: self.frame)
-        activityIndicator.startAnimating()
-        self.backgroundColor = .green
-        activityIndicator.backgroundColor = .yellow
+        activityIndicator = NVActivityIndicatorView(frame: self.frame, type: .lineScaleParty, color: .black)
         self.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
     }
     
     func setupConstraints() {

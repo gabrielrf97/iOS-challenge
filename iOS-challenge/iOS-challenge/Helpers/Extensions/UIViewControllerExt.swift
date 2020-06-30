@@ -11,21 +11,9 @@ import UIKit
 
 extension UIViewController {
     
-    static var activityIndicator = UIActivityIndicatorView(style: .large)
-    
     func present( message: String, withTitle title: String, option: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: option ?? "Try Again", style: .default))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func startLoading(with message: String?) {
-        UIViewController.activityIndicator.center = self.view.center
-        self.view.addSubview(UIViewController.activityIndicator)
-        UIViewController.activityIndicator.startAnimating()
-    }
-    
-    func stopLoading() {
-        UIViewController.activityIndicator.stopAnimating()
     }
 }

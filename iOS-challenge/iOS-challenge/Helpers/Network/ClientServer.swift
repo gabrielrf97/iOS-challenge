@@ -26,9 +26,9 @@ struct AppClientServer: ClientServer {
     }
 }
 
-//struct MockClientServer: ClientServer {
-//
-//    func requestSwiftRepositories(completion: @escaping (NetworkLayer<Repositories>) -> Void) {
-//        completion(.success(Repository.getMockedData()))
-//    }
-//}
+struct MockClientServer: ClientServer {
+    
+    func requestSwiftRepositories(in page: Int, completion: @escaping (NetworkLayer<Repositories>) -> Void) {
+        completion(.success(Repositories(items: Repository.getMockedData())))
+    }
+}

@@ -86,4 +86,12 @@ class RepositoryCell: UITableViewCell, ViewCode {
         self.authorImage.sd_setImage(with: url, completed: .none)
     }
     
+    func configureForTest() {
+        self.nameLabel.text = "awesome-ios"
+        self.authorLabel.text = "vsouza"
+        self.starsLabel.text = "35149"
+        let url = URL(string: "https://avatars2.githubusercontent.com/u/484656?v=4")
+        self.authorImage.sd_setImage(with: url, completed: .none)
+    }
+    
 }

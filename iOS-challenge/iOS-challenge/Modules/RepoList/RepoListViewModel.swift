@@ -24,13 +24,13 @@ class RepoListViewModel {
     }
     
     func fecthData() {
-        server?.requestSwiftRepositories(in: lastFetchedPage, completion: { [unowned self] response in
+        server?.requestSwiftRepositories(in: lastFetchedPage, completion: { [weak self] response in
             switch response {
             case .success(let repositories):
-                self.lastFetchedPage += 1
-                self.viewDelegate?.show(repositories: repositories)
+                self?.lastFetchedPage += 1
+                self?.viewDelegate?.show(repositories: repositories)
             case .failure(let errorMessage):
-                self.viewDelegate?.show(errorMessage: errorMessage)
+                self?.viewDelegate?.show(errorMessage: errorMessage)
             }
         })
     }
