@@ -7,19 +7,18 @@
 //
 
 import XCTest
-import SnapshotTesting
+import UIKit
 @testable import iOS_challenge
 
 class RepositoryCell: XCTestCase {
 
-    override func setUp() {}
+    override func setUp() {
+
+    }
 
     override func tearDown() {}
 
     func testRepositoryCell() {
-//        let sut = RepositoryCell()
-//        sut.configureForTest()
-//        assertSnapshot(matching: sut, as: .image)
-    }
 
+    }
 }

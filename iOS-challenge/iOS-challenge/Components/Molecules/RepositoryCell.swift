@@ -59,9 +59,8 @@ class RepositoryCell: UITableViewCell, ViewCode {
             starsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             starsLabel.widthAnchor.constraint(equalToConstant: 80.0),
             starsLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            starsLabel.heightAnchor.constraint(equalToConstant: 80.0)
+            starsLabel.heightAnchor.constraint(equalToConstant: 50.0)
         ])
-        starsLabel.textAlignment = .center
         
         NSLayoutConstraint.activate([
             nameLabel.trailingAnchor.constraint(equalTo: starsLabel.leadingAnchor),
